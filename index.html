@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore exquisite sarees with intricate designs and rich fabrics from Sri Vijaya Lakshmi Fine Kalamkari Arts.">
+    <meta name="keywords" content="Sarees, Kalamkari Arts, Traditional Sarees, Handwoven Sarees, Sri Vijaya Lakshmi">
+    <meta name="author" content="Sri Vijaya Lakshmi Fine Kalamkari Arts">
+    <title>Sarees Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #34495e;
+            animation: fadeIn 1s ease-out, slideIn 1s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .navbar.navbar-visible {
+            opacity: 1;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ecf0f1;
+            transition: color 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #3498db;
+            transform: translateY(-5px);
+            transition: all 0.2s ease;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fullscreenAnimation {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        #mainImage.fullscreen, .carousel-item img.fullscreen {
+            animation: fullscreenAnimation 0.5s ease-out forwards;
+            z-index: 9999;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            object-fit: cover;
+            padding: 10px;
+            animation: scaleUp 1.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.8);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Fix for small screens */
+        @media (max-width: 767px) {
+            .navbar-text {
+                font-size: 1rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .navbar-brand img {
+                width: 40px;
+                height: auto;
+            }
+
+            .main-image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .carousel-item img {
+                height: auto;
+                width: 100%;
+                max-height: 400px; /* Prevents images from being too tall */
+            }
+        }
+
+        /* Larger screens */
+        @media (min-width: 768px) {
+            .carousel-item img {
+                height: 550px;
+                width: 100%;
+            }
+
+            .main-image img {
+                max-width: 60%;
+            }
+        }
+
+        .content {
+            padding-top: 30px;
+        }
+
+        .carousel {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .navbar-toggler {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            width: 50px;
+            height: auto;
+            border-radius: 40px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.2);
+        }
+
+        .navbar-text {
+            color: #ecf0f1;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .main-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/logo.png?alt=media&token=6c8a3d1b-c102-49c5-8b7c-b4d54d007388" alt="Brand Logo" class="me-2">
+      <span class="navbar-text">Sri Vijaya Lakshmi Fine Kalamkari Arts</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about-us.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="awards.html">Awards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Saree-page.html">Sarees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="best-works.html">Best Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x500?text=Saree+1" class="d-block w-100" alt="Beautiful saree in vibrant colors" loading="lazy" id="carouselImage1" onclick="openFullscreen('carouselImage1')">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500?text=Saree+2" class="d-block w-100" alt="Elegant saree with intricate design" loading="lazy" id="carouselImage2" onclick="openFullscreen('carouselImage2')">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500?text=Saree+3" class="d-block w-100" alt="Traditional saree in rich fabric" loading="lazy" id="carouselImage3" onclick="openFullscreen('carouselImage3')">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500?text=Saree+4" class="d-block w-100" alt="Classic saree with beautiful embroidery" loading="lazy" id="carouselImage4" onclick="openFullscreen('carouselImage4')">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500?text=Saree+5" class="d-block w-100" alt="Handwoven saree with modern twist" loading="lazy" id="carouselImage5" onclick="openFullscreen('carouselImage5')">
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500?text=Saree+6" class="d-block w-100" alt="Luxurious saree with premium fabric" loading="lazy" id="carouselImage6" onclick="openFullscreen('carouselImage6')">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="main-image">
+        <img id="mainImage" src="https://via.placeholder.com/1200x600?text=Main+Image+of+Sarees" alt="Main image of sarees" onclick="openFullscreen('mainImage')">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function openFullscreen(elementId) {
+        var elem = document.getElementById(elementId);
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+        elem.classList.add('fullscreen');
+        elem.addEventListener('animationend', function() {
+            elem.classList.remove('fullscreen');
+        });
+    }
+</script>
+
+</body>
+</html>
