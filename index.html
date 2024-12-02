@@ -15,28 +15,23 @@
             opacity: 0;
             animation-fill-mode: forwards;
         }
-
         .navbar.navbar-visible {
             opacity: 1;
         }
-
         .navbar-nav .nav-link {
             color: #ecf0f1;
             transition: color 0.3s ease;
             font-size: 1.2rem;
         }
-
         .navbar-nav .nav-link:hover {
             color: #3498db;
             transform: translateY(-5px);
             transition: all 0.2s ease;
         }
-
         .navbar-nav .nav-link.active {
             color: #2980b9;
             font-weight: bold;
         }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -45,7 +40,6 @@
                 opacity: 1;
             }
         }
-
         @keyframes slideIn {
             from {
                 transform: translateY(-50px);
@@ -54,7 +48,6 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes fullscreenAnimation {
             0% {
                 transform: scale(1);
@@ -65,12 +58,10 @@
                 opacity: 1;
             }
         }
-
         #mainImage.fullscreen, .carousel-item img.fullscreen {
             animation: fullscreenAnimation 0.5s ease-out forwards;
             z-index: 9999;
         }
-
         .carousel-item img {
             width: 100%;
             object-fit: cover;
@@ -78,7 +69,6 @@
             animation: scaleUp 1.5s ease-in-out;
             cursor: pointer;
         }
-
         @keyframes scaleUp {
             0% {
                 transform: scale(0.8);
@@ -87,100 +77,100 @@
                 transform: scale(1);
             }
         }
-
-        /* Fix for small screens */
         @media (max-width: 767px) {
             .navbar-text {
-                font-size: 0.9rem;  /* Decreased size */
+                font-size: 0.9rem;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-
             .navbar-brand img {
                 width: 40px;
                 height: auto;
             }
-
             .navbar-collapse {
                 text-align: center;
             }
-
             .navbar-nav {
                 margin-top: 10px;
             }
-
             .navbar-nav .nav-link {
                 font-size: 1rem;
                 margin-bottom: 10px;
             }
-
             .main-image img {
-                max-width: 80%;  /* Main image smaller on small screens */
+                max-width: 80%;
                 height: auto;
             }
-
             .carousel-item img {
                 height: auto;
                 width: 100%;
-                max-height: 400px; /* Prevents images from being too tall */
+                max-height: 400px;
             }
         }
-
-        /* Larger screens */
         @media (min-width: 768px) {
             .carousel-item img {
                 height: 550px;
                 width: 100%;
             }
-
             .main-image img {
-                max-width: 50%;  /* Smaller main image for larger screens */
+                max-width: 50%;
             }
         }
-
         .content {
             padding-top: 30px;
         }
-
         .carousel {
             padding-left: 15px;
             padding-right: 15px;
         }
-
         .navbar-toggler {
             margin-left: auto;
             margin-right: 20px;
         }
-
         .navbar-brand {
             display: flex;
             align-items: center;
         }
-
         .navbar-brand img {
             width: 50px;
             height: auto;
             border-radius: 40px;
             transition: transform 0.3s ease-in-out;
         }
-
         .navbar-brand img:hover {
             transform: scale(1.2);
         }
-
         .navbar-text {
             color: #ecf0f1;
-            font-size: 1rem;  /* Decreased size */
+            font-size: 1rem;
             font-weight: bold;
             margin-left: 10px;
         }
-
         .main-image {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 30px;
+        }
+        .author-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .author-info h2 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .author-info p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .author-description{
+            font-size: 1rem;
+            margin-top: 10px;
+            line-height: 1.6;        
+            font-weight: 400;
         }
     </style>
 </head>
@@ -257,6 +247,14 @@
 
     <div class="main-image">
         <img id="mainImage" src="https://via.placeholder.com/1200x600?text=Main+Image+of+Sarees" alt="Main image of sarees" onclick="openFullscreen('mainImage')">
+    </div>
+
+    <div class="author-info">
+        <h2>M VISWANTH REDDY</h2>
+        <p>(National Award Winner)</p>       
+    </div>
+    <div class="author-description">
+        <p>VISWANTH REDDY is belongs from the averge middle class family..</p>
     </div>
 </div>
 
