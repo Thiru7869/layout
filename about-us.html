@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .about-section {
+            padding: 40px 15px;
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .about-section h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 10px 5px;
+        }
+
+        .card-body h5 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1em;
+            color: #555;
+            margin: 0;
+        }
+
+        @media (max-width: 767px) {
+            .row.root-row .card,
+            .row.child-row .card {
+                flex: 1 1 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .row.root-row .card {
+                flex: 1 1 calc(45% - 15px);
+                max-width: calc(45% - 15px);
+            }
+            .row.child-row .card {
+                flex: 1 1 calc(30% - 15px);
+                max-width: calc(30% - 15px);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .row.root-row .card {
+                flex: 1 1 calc(40% - 15px);
+                max-width: calc(40% - 15px);
+            }
+            .row.child-row .card {
+                flex: 1 1 calc(25% - 15px);
+                max-width: calc(25% - 15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section" id="about">
+        <h2>About Us</h2>
+        <div class="container">
+            <div class="row root-row">
+                <div class="card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/munireddy.jpg?alt=media&token=3a4146c3-6c33-472f-98b9-0e7cc091e879" alt="Muni Reddy">
+                    <div class="card-body">
+                        <h5>Muni Reddy</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari">
+                    <div class="card-body">
+                        <h5>Rajeshwari</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row child-row">
+                <div class="card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/muniratnamma.jpg?alt=media&token=33e8fe3e-95fc-4a0c-83ce-bf73e21e1e62" alt="Muniratnamma">
+                    <div class="card-body">
+                        <h5>Muniratnamma</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/vijayalakshmi.jpg?alt=media&token=6aafca8b-814c-4336-886c-95b3eb851142" alt="Vijaya Lakshmi">
+                    <div class="card-body">
+                        <h5>Vijaya Lakshmi</h5>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/viswanath%20reddy.jpg?alt=media&token=4d926e6f-ec0b-431a-b39e-2ef8b3831558" alt="Viswanath Reddy">
+                    <div class="card-body">
+                        <h5>Viswanath Reddy</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

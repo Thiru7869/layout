@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore a wide variety of sarees including Pattu, Chenderi, Tusser, and Bangalore Silks. Find the perfect saree for any occasion.">
+  <meta name="keywords" content="Sarees, Pattu, Chenderi, Tusser, Bangalore Silks, Traditional Sarees">
+  <meta property="og:title" content="Saree Collection">
+  <meta property="og:description" content="Explore a wide variety of sarees including Pattu, Chenderi, Tusser, and Bangalore Silks. Find the perfect saree for any occasion.">
+  <title>Saree Collection</title>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font: 1em 'Open Sans', sans-serif;
+      box-sizing: border-box;
+      background-color: #f5f5f5;
+      color: black;
+      font-weight: bolder;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: orangered;
+    }
+
+    nav img {
+  height: 40px;
+  width: auto;
+  margin-right: 20px;
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;    
+      gap: 15px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: yellow;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .saree-container {
+      display: grid;
+      gap: 20px;
+      padding: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 768px) {
+      .saree-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .saree-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .saree-item {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .saree-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .saree-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 2 / 3;
+      transition: transform 0.3s ease;
+    }
+
+    .saree-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .saree-item h3 {
+      margin: 10px;
+    }
+
+    .quick-view {
+      padding: 10px 20px;
+      background-color: #ff6347;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto 20px;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .quick-view:hover {
+      background-color: #ff4500;
+      transform: scale(1.1);
+    }
+
+    .back-button {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    footer a {
+      color: #ff6347;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/logo.png?alt=media&token=6c8a3d1b-c102-49c5-8b7c-b4d54d007388" alt="Logo" aria-label="Saree Collection Logo">
+    <ul>
+      <li><a href="index.html" aria-label="Home">Home</a></li>
+      <li><a href="about.html" aria-label="About">About</a></li>
+      <li><a href="awards.html" aria-label="Awards">Awards</a></li>
+      <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="saree-container">
+    <div class="saree-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/pattu.jpg?alt=media&token=72cd5b9c-2b52-4f61-b405-1927d00d18a0" alt="Pattu Saree">
+      <h3>Pattu Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-pattu.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/chenderi-2.jpg?alt=media&token=4631321d-f7ad-492e-ac6b-1c87627530bf" alt="Chenderi Saree">
+      <h3>Chenderi Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-chenderi.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/Tusser-2.jpg?alt=media&token=bcd2bd5a-b72a-4d05-a2b9-bd8a08a27cd4" alt="Tusser Saree">
+      <h3>Tusser Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-tusser.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/banglore-silks-1.jpg?alt=media&token=1ecb3bd6-8ed4-4456-a729-dbf6f839bcff" alt="Bangalore Silks Saree">
+      <h3>Bangalore Silks Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-bangalore.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://via.placeholder.com/200x300" alt="Kanjivaram Saree">
+      <h3>Kanjivaram Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-kanjivaram.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://via.placeholder.com/200x300" alt="Banarasi Saree">
+      <h3>Banarasi Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-banarasi.html'">Quick View</button>
+    </div>
+    <div class="saree-item">
+      <img src="https://via.placeholder.com/200x300" alt="Patola Saree">
+      <h3>Patola Saree</h3>
+      <button class="quick-view" onclick="window.location.href='details-patola.html'">Quick View</button>
+    </div>
+  </div>
+
+  <div class="back-button" onclick="window.location.href='index.html';">Back</div>
+  <footer>
+    <p>&copy; 2024 Sri Vijaya Lakshmi Fine Kalamkari Arts. All Rights Reserved. <a href="contact.html">Contact Us</a></p>
+  </footer>
+</body>
+</html>
