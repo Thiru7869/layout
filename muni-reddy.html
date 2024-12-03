@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muni Reddy - Kalamkari Achievements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Merriweather', serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #2c3e50;
+            padding: 10px 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #f39c12;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;            
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .person-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .person-info h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .person-info p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .achievements {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .achievements h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .achievements p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .award-card {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .award-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;        
+        }
+
+        .award-card h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .back-button {
+            position: sticky;
+            bottom: 20px;
+            display: inline-block;
+            background-color: #f39c12;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background-color: #e67e22;
+        }
+
+        @media (max-width: 480px) {
+            .awards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .award-card {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .awards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .awards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+
+        #modal-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" aria-label="Go to Home Page">Home</a>
+            <a href="#about" aria-label="Go to About Section">About</a>
+            <a href="#achievements" aria-label="Go to Achievements Section">Achievements</a>
+            <a href="#awards" aria-label="Go to Awards Section">Awards</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/munireddy.jpg?alt=media&token=3a4146c3-6c33-472f-98b9-0e7cc091e879" alt="Muni Reddy" aria-label="Muni Reddy">
+        </div>
+
+        <div class="person-info" id="about">
+            <h1>Muni Reddy</h1>
+            <p>Muni Reddy is a renowned artist who has reached great heights in Kalamkari art, a traditional hand-painting style originating from Andhra Pradesh. Through years of dedication, he has honed his skills, blending ancient techniques with modern aesthetics.</p>
+        </div>
+
+        <div class="achievements" id="achievements">
+            <h2>Achievements</h2>
+            <p>From humble beginnings, Muni Reddy has achieved recognition on national and international platforms for his exceptional work in Kalamkari. He has displayed his art at various exhibitions and has won several prestigious awards for his intricate and expressive designs.</p>
+        </div>
+
+        <div class="awards" id="awards">
+            <div class="award-card">
+                <img src="https://via.placeholder.com/150" alt="Award 1" aria-label="Award for Best Traditional Artist">
+                <h4>Best Traditional Artist</h4>
+            </div>
+            <div class="award-card">
+                <img src="https://via.placeholder.com/150" alt="Award 2" aria-label="Award for International Art Exhibition 2023">
+                <h4>International Art Exhibition 2023</h4>
+            </div>
+            <div class="award-card">
+                <img src="https://via.placeholder.com/150" alt="Award 3" aria-label="Award for Kalamkari Excellence">
+                <h4>Kalamkari Excellence Award</h4>
+            </div>
+            <div class="award-card">
+                <img src="https://via.placeholder.com/150" alt="Award 4" aria-label="Award for Innovative Artist of the Year">
+                <h4>Innovative Artist of the Year</h4>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
+    </div>
+
+    <div id="quick-view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="" alt="Award Image">
+            <h2 id="modal-title">Award Title</h2>
+            <p id="modal-description">Award Description</p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("quick-view-modal");
+        const closeBtn = document.querySelector(".close-btn");
+        const modalImage = document.getElementById("modal-image");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDescription = document.getElementById("modal-description");
+
+        document.querySelectorAll(".award-card img").forEach((img, index) => {
+            img.addEventListener("click", () => {
+                modal.style.display = "flex";
+                modalImage.src = img.src;
+                modalTitle.textContent = img.alt;
+                modalDescription.textContent = `Description for ${img.alt}.`;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

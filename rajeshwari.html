@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajeshwari - Kalamkari Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Merriweather', serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #2c3e50;
+            padding: 10px 0;
+            z-index: 100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #f39c12;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .person-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .person-info h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .person-info p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .biography, .kalamkari-artist, .photos-section {
+            text-align: center;
+        }
+
+        .photos-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .photo-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .photo-card img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .photo-card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        .back-button {
+            position: sticky;
+            bottom: 20px;
+            display: inline-block;
+            background-color: #f39c12;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background-color: #e67e22;
+        }
+
+        @media (max-width: 480px) {
+            .photos-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" aria-label="Go to Home Page">Home</a>
+            <a href="#about" aria-label="Go to About Section">About</a>
+            <a href="#biography" aria-label="Go to Biography Section">Biography</a>            
+            <a href="#photos" aria-label="Go to Photos Section">Photos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari" aria-label="Rajeshwari">
+        </div>
+
+        <div class="person-info" id="about">
+            <h1>Rajeshwari</h1>
+            <p>Rajeshwari is a talented Kalamkari artist who has gained recognition for her intricate and vibrant art. With a passion for preserving the ancient tradition of Kalamkari, she infuses her works with modern elements while maintaining the essence of the traditional craft.</p>
+        </div>
+
+        <div class="section-title" id="biography">
+            <h2>Biography</h2>
+        </div>
+
+        <div class="biography">
+            <p>Born and raised in Andhra Pradesh, Rajeshwari's journey into Kalamkari started at a young age, learning the art from traditional masters. She has dedicated her life to preserving and evolving this ancient art form, often integrating contemporary themes into her paintings while adhering to the rich heritage of Kalamkari. Her works explore a wide range of subjects, from mythological figures to modern abstract designs.</p>
+        </div>
+
+        <div class="section-title" id="kalamkari-artist">
+            <h2>Kalamkari Artist</h2>
+        </div>
+
+        <div class="kalamkari-artist">
+            <p>Rajeshwari's Kalamkari works are characterized by their intricate details and the use of natural dyes on fabric. She specializes in creating narrative pieces that tell stories through vibrant colors, patterns, and symbols. As a passionate advocate of traditional art forms, Rajeshwari also holds workshops and exhibitions to teach others about the beauty and techniques of Kalamkari.</p>
+        </div>
+
+        <div class="section-title" id="photos">
+            <h2>Photos</h2>
+        </div>
+
+        <div class="photos-section">
+            <div class="photo-card">
+                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 1">
+                <p>Rajeshwari's Mythological Storytelling Artwork</p>
+            </div>
+            <div class="photo-card">
+                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 2">
+                <p>Intricate Floral Kalamkari Design</p>
+            </div>
+            <div class="photo-card">
+                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 3">
+                <p>Contemporary Abstract Kalamkari Art</p>
+            </div>
+        </div>
+
+        <!-- Fixed Back Button with correct redirection -->
+        <a href="/" class="back-button" aria-label="Go back to homepage">Back</a>
+    </div>
+</body>
+</html>
