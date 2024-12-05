@@ -178,7 +178,7 @@
 
     <div class="container">
         <div class="image-container">
-            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/vijayalakshmi.jpg?alt=media&token=6aafca8b-814c-4336-886c-95b3eb851142" alt="Vijayalakshmi" aria-label="Vijayalakshmi">
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/vijayalakshmi.jpg?alt=media&token=6aafca8b-814c-4336-886c-95b3eb851142" alt="Vijayalakshmi" aria-label="Vijayalakshmi" id="vijayalakshmiImage" onclick="openFullscreen('vijayalakshmiImage')">
         </div>
 
         <div class="person-info" id="about">
@@ -227,5 +227,20 @@
 
         <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
     </div>
+
+    <script>
+        function openFullscreen(id) {
+            const elem = document.getElementById(id);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
