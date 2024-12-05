@@ -91,37 +91,41 @@
             margin-bottom: 20px;
         }
 
-        .biography, .kalamkari-artist, .photos-section {
+        .biography, .kalamkari-artist {
             text-align: center;
         }
 
-        .photos-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        .awards-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
             margin-top: 30px;
+            flex-wrap: wrap;
+            text-align: center;
         }
 
-        .photo-card {
+        .award-card {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
+            flex: 1;
+            min-width: 45%;
+            max-width: 45%;
+            box-sizing: border-box;
         }
 
-        .photo-card img {
+        .award-card img {
             width: 100%;
-            max-width: 300px;
             height: auto;
-            object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .photo-card p {
-            font-size: 1rem;
-            color: #7f8c8d;
+        .award-card img:hover {
+            transform: scale(1.05);
         }
 
         .back-button {
@@ -143,12 +147,23 @@
             background-color: #e67e22;
         }
 
-        @media (max-width: 480px) {
-            .photos-section {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .awards-section {
+                justify-content: center;
+            }
+
+            .award-card {
+                min-width: 45%;
+                max-width: 45%;
             }
         }
 
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .award-card {
+                min-width: 45%;
+                max-width: 45%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -156,19 +171,19 @@
         <nav>
             <a href="index.html" aria-label="Go to Home Page">Home</a>
             <a href="#about" aria-label="Go to About Section">About</a>
-            <a href="#biography" aria-label="Go to Biography Section">Biography</a>            
-            <a href="#photos" aria-label="Go to Photos Section">Photos</a>
+            <a href="#biography" aria-label="Go to Biography Section">Biography</a>
+            <a href="#awards" aria-label="Go to Awards Section">Awards</a>
         </nav>
     </header>
 
     <div class="container">
-        <div class="image-container">
-            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari" aria-label="Rajeshwari">
+        <div class="image-container">           
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari" aria-label="Rajeshwari" id="rajeshwariImage" onclick="openFullscreen('rajeshwariImage')">
         </div>
 
         <div class="person-info" id="about">
             <h1>Rajeshwari</h1>
-            <p>Rajeshwari is a talented Kalamkari artist who has gained recognition for her intricate and vibrant art. With a passion for preserving the ancient tradition of Kalamkari, she infuses her works with modern elements while maintaining the essence of the traditional craft.</p>
+            <p>Rajeshwari is a renowned Kalamkari artist known for her unique style of blending ancient traditions with modern design sensibilities. Her intricate works celebrate the beauty of mythology and spirituality.</p>
         </div>
 
         <div class="section-title" id="biography">
@@ -176,7 +191,7 @@
         </div>
 
         <div class="biography">
-            <p>Born and raised in Andhra Pradesh, Rajeshwari's journey into Kalamkari started at a young age, learning the art from traditional masters. She has dedicated her life to preserving and evolving this ancient art form, often integrating contemporary themes into her paintings while adhering to the rich heritage of Kalamkari. Her works explore a wide range of subjects, from mythological figures to modern abstract designs.</p>
+            <p>Rajeshwari was born into a family of artists, which helped her develop a deep connection with Kalamkari from a young age. She has spent decades perfecting her craft, with her artworks drawing inspiration from Indian mythology, folklore, and nature.</p>
         </div>
 
         <div class="section-title" id="kalamkari-artist">
@@ -184,30 +199,48 @@
         </div>
 
         <div class="kalamkari-artist">
-            <p>Rajeshwari's Kalamkari works are characterized by their intricate details and the use of natural dyes on fabric. She specializes in creating narrative pieces that tell stories through vibrant colors, patterns, and symbols. As a passionate advocate of traditional art forms, Rajeshwari also holds workshops and exhibitions to teach others about the beauty and techniques of Kalamkari.</p>
+            <p>Rajeshwari’s dedication to Kalamkari has made her a pioneer in the field, inspiring many young artists to pursue this traditional art form. Her work has been exhibited in various national and international art galleries.</p>
         </div>
 
-        <div class="section-title" id="photos">
-            <h2>Photos</h2>
+        <div class="section-title" id="awards">
+            <h2>Awards</h2>
         </div>
 
-        <div class="photos-section">
-            <div class="photo-card">
-                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 1">
-                <p>Rajeshwari's Mythological Storytelling Artwork</p>
+        <div class="awards-section">
+            <div class="award-card">
+                <img src="https://example.com/award1.jpg" alt="Award 1">
+                <h4>Best Artist Award</h4>
             </div>
-            <div class="photo-card">
-                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 2">
-                <p>Intricate Floral Kalamkari Design</p>
+            <div class="award-card">
+                <img src="https://example.com/award2.jpg" alt="Award 2">
+                <h4>Art Excellence Award</h4>
             </div>
-            <div class="photo-card">
-                <img src="https://via.placeholder.com/300" alt="Kalamkari Artwork 3">
-                <p>Contemporary Abstract Kalamkari Art</p>
+            <div class="award-card">
+                <img src="https://example.com/award3.jpg" alt="Award 3">
+                <h4>Creative Vision Award</h4>
+            </div>
+            <div class="award-card">
+                <img src="https://example.com/award4.jpg" alt="Award 4">
+                <h4>Lifetime Achievement Award</h4>
             </div>
         </div>
 
-        <!-- Fixed Back Button with correct redirection -->
-        <a href="/" class="back-button" aria-label="Go back to homepage">Back</a>
+        <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
     </div>
+
+    <script>
+        function openFullscreen(id) {
+            const elem = document.getElementById(id);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
