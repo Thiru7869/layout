@@ -178,7 +178,8 @@
 
     <div class="container">
         <div class="image-container">
-            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" alt="Viswanath Reddy" aria-label="Viswanath Reddy">
+            <!-- Added onclick function to trigger fullscreen mode -->
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" alt="Viswanath Reddy" aria-label="Viswanath Reddy" id="viswanathImage" onclick="openFullscreen('viswanathImage')">
         </div>
 
         <div class="person-info" id="about">
@@ -227,5 +228,20 @@
 
         <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
     </div>
+
+    <script>
+        function openFullscreen(id) {
+            const elem = document.getElementById(id);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
