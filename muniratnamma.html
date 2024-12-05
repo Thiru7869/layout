@@ -178,7 +178,7 @@
 
     <div class="container">
         <div class="image-container">
-            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/muniratnamma.jpg?alt=media&token=33e8fe3e-95fc-4a0c-83ce-bf73e21e1e62" alt="Muniratnamma" aria-label="Muniratnamma">
+            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/muniratnamma.jpg?alt=media&token=33e8fe3e-95fc-4a0c-83ce-bf73e21e1e62" alt="Muniratnamma" aria-label="Muniratnamma" id="muniratnammaImage" onclick="openFullscreen('muniratnammaImage')">
         </div>
 
         <div class="person-info" id="about">
@@ -227,5 +227,20 @@
 
         <a href="index.html" class="back-button" aria-label="Go back to homepage">Back</a>
     </div>
+
+    <script>
+        function openFullscreen(id) {
+            const elem = document.getElementById(id);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
