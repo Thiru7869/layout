@@ -149,8 +149,9 @@
             font-weight: bold;
             margin-left: 10px;
         }
-    
-        * {
+
+    <!--Store css-->        
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -164,6 +165,11 @@ body {
 .store-info-section {
     padding: 30px 0;
     background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .store-title {
@@ -176,32 +182,27 @@ body {
     margin: 10px 0;
 }
 
+.store-info-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+.store-info-section p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+}
+
 .btn-primary {
     background-color: #5cb85c;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
-}
-
-.home-info-section {
-    padding: 30px 0;
-    background-color: #f8f8f8;
-}
-
-.home-name {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.home-award {
-    font-size: 1rem;
-    color: #555;
-}
-
-.home-description {
-    font-size: 1.1rem;
-    margin-top: 10px;
+    display: inline-block;
+    margin-top: 15px;
 }
 
 .store-image {
@@ -209,6 +210,9 @@ body {
     max-width: 500px;
     height: auto;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (min-width: 992px) {
@@ -217,14 +221,14 @@ body {
         margin: 0 auto;
     }
 
-    .store-info-section, .home-info-section {
+    .store-info-section {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
 
-    .store-info-section .row, .home-info-section .row {
+    .store-info-section .row {
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -238,7 +242,7 @@ body {
         font-size: 1.4rem;
     }
 
-    .home-name {
+    .store-info-section h2 {
         font-size: 2.2rem;
     }
 }
@@ -249,7 +253,7 @@ body {
         margin: 0 auto;
     }
 
-    .store-info-section .row, .home-info-section .row {
+    .store-info-section .row {
         display: flex;
         justify-content: space-between;
     }
@@ -262,10 +266,6 @@ body {
         font-size: 1.2rem;
     }
 
-    .home-name {
-        font-size: 1.6rem;
-    }
-
     .store-image {
         width: 80%;
     }
@@ -276,11 +276,11 @@ body {
         padding: 10px;
     }
 
-    .store-info-section, .home-info-section {
+    .store-info-section {
         padding: 20px 0;
     }
 
-    .store-info-section .row, .home-info-section .row {
+    .store-info-section .row {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -294,20 +294,168 @@ body {
         font-size: 1rem;
     }
 
-    .home-name {
-        font-size: 1.3rem;
-    }
-
     .store-image {
         width: 90%;
     }
-
-    .home-description {
-        font-size: 1rem;
-    }
 }
 
-       
+    <!--Home css-->
+    
+   /* Your existing styles */
+
+.home-info-section {
+  padding: 30px 0;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.home-info-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-info-section .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.home-info-section .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.home-award {
+  font-size: 1rem;
+  color: #555;
+}
+
+.home-description {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.home-info-section h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+.home-info-section p {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+.store-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .home-name {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .home-name {
+    font-size: 1.6rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  .home-info-section {
+    padding: 20px 0;
+  }
+
+  .home-info-section .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-name {
+    font-size: 1.3rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+}
+
+/* Fullscreen Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
      <!--about us css-->     
         body {
             margin: 0;
@@ -330,12 +478,12 @@ body {
         }
 
         .about-us-wrapper h2 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 28px;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .about-container {
@@ -471,7 +619,32 @@ body {
     }
 }
 
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 15%;
+    padding: 10px;
+    font-size: 15px; /* Smaller font size for the arrow symbol */
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
 
+.back-to-top-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Show button when scrolling */
+.show {
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -521,8 +694,7 @@ body {
           document.getElementById("home-info-section").scrollIntoView({ behavior: "smooth" });
         });
       </script>
-      
-<div class="content">
+   <div class="content">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -553,6 +725,41 @@ body {
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function openFullscreen(elementId) {
+        var elem = document.getElementById(elementId);
+        var wrapper = document.createElement('div');
+        wrapper.id = "fullscreen-wrapper";
+        wrapper.style.position = 'fixed';
+        wrapper.style.top = '0';
+        wrapper.style.left = '0';
+        wrapper.style.width = '100vw';
+        wrapper.style.height = '100vh';
+        wrapper.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+        wrapper.style.alignItems = 'center';
+        wrapper.style.zIndex = '1000';
+
+        var imgClone = elem.cloneNode();
+        imgClone.style.maxWidth = '90%';
+        imgClone.style.maxHeight = '90%';
+        imgClone.onclick = closeFullscreen;
+
+        wrapper.appendChild(imgClone);
+        document.body.appendChild(wrapper);
+    }
+
+    function closeFullscreen() {
+        var wrapper = document.getElementById('fullscreen-wrapper');
+        if (wrapper) {
+            document.body.removeChild(wrapper);
+        }
+    }
+</script>
 
      <!-- Section 1: Store Information -->
 <section id="store-info-section" class="store-info-section">
@@ -573,7 +780,7 @@ body {
     <div class="container">
       <div class="row">
         <div class="col">
-          <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" alt="Home" class="store-image">
+          <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" alt="Home" class="store-image" id="homeImage" onclick="openFullscreen('homeImage')">
           <h3 class="home-name">M VISWANATH REDDY</h3>
           <p class="home-award">(National Award Winner)</p>
           <p class="home-description">Founder and Owner of the store, passionate about traditional arts and crafts, bringing authentic Kalamkari designs to life.</p>
@@ -582,11 +789,58 @@ body {
     </div>
   </section>
   
-
+  <script>
+    function openFullscreen(elementId) {
+      var elem = document.getElementById(elementId);
+      var wrapper = document.createElement('div');
+      wrapper.id = "fullscreen-wrapper";
+      wrapper.style.position = 'fixed';
+      wrapper.style.top = '0';
+      wrapper.style.left = '0';
+      wrapper.style.width = '100vw';
+      wrapper.style.height = '100vh';
+      wrapper.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      wrapper.style.display = 'flex';
+      wrapper.style.justifyContent = 'center';
+      wrapper.style.alignItems = 'center';
+      wrapper.style.zIndex = '1000';
+      wrapper.style.transition = 'all 0.5s ease-in-out';
+  
+      var imgClone = elem.cloneNode();
+      imgClone.style.maxWidth = '90%';
+      imgClone.style.maxHeight = '90%';
+      imgClone.style.transition = 'all 0.5s ease-in-out';
+      imgClone.onclick = closeFullscreen;
+  
+      wrapper.appendChild(imgClone);
+      document.body.appendChild(wrapper);
+      
+      setTimeout(() => {
+        wrapper.style.transform = 'scale(1)';
+      }, 0);
+    }
+  
+    function closeFullscreen() {
+      var wrapper = document.getElementById('fullscreen-wrapper');
+      if (wrapper) {
+        wrapper.style.transform = 'scale(0)';
+        setTimeout(() => {
+          document.body.removeChild(wrapper);
+        }, 500);
+      }
+    }
+  </script>
+  
+  <style>
+    #fullscreen-wrapper {
+      transform: scale(0);
+    }
+  </style>
+  
     
 <!-- About Us Section -->
 <section class="about-us-wrapper" id="about">
-    <h2></h2>
+    <h2>About US</h2>
     <div class="about-container">
         <div class="about-row">
             <div class="profile-card">
@@ -637,7 +891,7 @@ body {
 
 <section class="saree-section" id="saree-section">
     <div class="container">
-        <h2 class="text-center mb-4">Our Exquisite Sarees</h2>
+        <h2 class="text-center mb-4">Our Sarees</h2>
         <div class="row">
             <!-- Saree 1 -->
             <div class="col-12 col-sm-4 col-md-3 mb-4">
@@ -671,6 +925,12 @@ body {
     </div>
 </section>
 
+<!-- Back to Top Button -->
+<button id="backToTopBtn" class="back-to-top-btn" title="Go to top">
+    ↑
+  </button>
+  
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function openFullscreen(elementId) {
@@ -690,5 +950,25 @@ body {
         });
     }
 </script>
+
+<script>
+    // Get the button
+    const backToTopBtn = document.getElementById("backToTopBtn");
+  
+    // When the user scrolls down 100px from the top of the document, show the button
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    };
+  
+    // When the user clicks the button, scroll to the top
+    backToTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+  
 </body>
 </html>
