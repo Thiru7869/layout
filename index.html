@@ -10,59 +10,104 @@
     <title>Sarees Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar {
-            background-color: #34495e;
-            animation: fadeIn 1s ease-out, slideIn 1s ease-out;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        .navbar.navbar-visible {
-            opacity: 1;
-        }
-        .navbar-nav .nav-link {
-            color: #ecf0f1;
-            transition: color 0.3s ease;
-            font-size: 1.2rem;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #3498db;
-            transform: translateY(-5px);
-            transition: all 0.2s ease;
-        }
-        .navbar-nav .nav-link.active {
-            color: #2980b9;
-            font-weight: bold;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-        @keyframes fullscreenAnimation {
-            0% {
-                transform: scale(1);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-        }
-        #mainImage.fullscreen, .carousel-item img.fullscreen {
-            animation: fullscreenAnimation 0.5s ease-out forwards;
-            z-index: 9999;
-        }
+     html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 1em 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  color: black;
+  font-weight: bolder;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #2c3e50; 
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.company-name {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;    
+  gap: 15px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: yellow;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+  }
+  .menu.active {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+
+      <!--carousel-->
         .carousel-item img {
             width: 100%;
             object-fit: cover;
@@ -205,370 +250,417 @@ body {
     margin-top: 15px;
 }
 
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 .store-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (min-width: 992px) {
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .store-info-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .store-info-section .row {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .store-title {
-        font-size: 2.5rem;
-    }
-
-    .store-description {
-        font-size: 1.4rem;
-    }
-
-    .store-info-section h2 {
-        font-size: 2.2rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .store-info-section .row {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .store-title {
-        font-size: 1.75rem;
-    }
-
-    .store-description {
-        font-size: 1.2rem;
-    }
-
-    .store-image {
-        width: 80%;
-    }
-}
-
-@media (max-width: 767px) {
-    .container {
-        padding: 10px;
-    }
-
-    .store-info-section {
-        padding: 20px 0;
-    }
-
-    .store-info-section .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .store-title {
-        font-size: 1.5rem;
-    }
-
-    .store-description {
-        font-size: 1rem;
-    }
-
-    .store-image {
-        width: 90%;
-    }
-}
-
-    <!--Home css-->
-    
-   /* Your existing styles */
-
-.home-info-section {
-  padding: 30px 0;
-  background-color: #f8f8f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.home-info-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-info-section .row {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  align-items: center;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.home-info-section .col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.home-name {
+.store-name {
   font-size: 2rem;
   font-weight: bold;
-}
-
-.home-award {
-  font-size: 1rem;
-  color: #555;
-}
-
-.home-description {
-  font-size: 1.1rem;
-  margin-top: 10px;
-}
-
-.home-info-section h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
+  color: #2c3e50;
   margin-top: 20px;
-}
-
-.home-info-section p {
-  font-size: 1rem;
-  color: #777;
-  margin-top: 10px;
-}
-
-.store-image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  cursor: pointer;
   margin-bottom: 20px;
 }
 
-@media (min-width: 992px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+.store-award {
+  font-size: 1.1rem;
+  color: #8a6d3b;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.store-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #d35400;
+  font-weight: bold;
+}
+
+.explore-btn {
+  background-color: #d35400;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #e67e22;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 576px) {
+  .store-name {
+    font-size: 1.8rem;
   }
 
-  .home-name {
-    font-size: 2.2rem;
+  .store-award {
+    font-size: 1rem;
+  }
+
+  .store-description {
+    font-size: 1rem;
+  }
+
+  .explore-btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .store-image {
+    max-width: 100%;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
+@media (min-width: 576px) and (max-width: 768px) {
+  .store-name {
+    font-size: 2rem;
   }
 
-  .home-name {
-    font-size: 1.6rem;
+  .store-award {
+    font-size: 1.1rem;
   }
 
-  .home-description {
-    font-size: 1rem;
+  .store-description {
+    font-size: 1.1rem;
+  }
+
+  .explore-btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .store-image {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .store-name {
+    font-size: 2.2rem;
+  }
+
+  .store-award {
+    font-size: 1.2rem;
+  }
+
+  .store-description {
+    font-size: 1.2rem;
+  }
+
+  .explore-btn {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+
+  .store-image {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .store-name {
+    font-size: 2.5rem;
+  }
+
+  .store-award {
+    font-size: 1.3rem;
+  }
+
+  .store-description {
+    font-size: 1.3rem;
+  }
+
+  .explore-btn {
+    font-size: 1.3rem;
+    padding: 14px 30px;
+  }
+
+  .store-image {
+    max-width: 600px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  color: #4b4b4b;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-info-section {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #fff8e1, #f4e1b0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-info-section h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home-info-section .home-award {
+  font-size: 1.2rem;
+  color: #8a6d3b;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.home-info-section .home-description {
+  font-size: 1.3rem;
+  color: #555;
+  margin-top: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.home-info-section .home-description .highlight {
+  color: #d35400;
+  font-weight: bold;
+}
+
+.home-info-section .store-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-info-section .store-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.explore-btn {
+  background-color: #d35400;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #e67e22;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-wrapper {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 1200px;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-us-wrapper h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.about-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.33% - 20px);
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.profile-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.profile-card-body {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+}
+
+.profile-card-body h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-color: #d35400;
+}
+
+.profile-card:hover .profile-card-body h5 {
+  color: #d35400;
+}
+
+@media (min-width: 992px) {
+  .home-info-section {
+    padding: 70px 50px;
+    text-align: center;
+  }
+
+  .home-info-section h3 {
+    font-size: 3rem;
+    top: 5px;
+  }
+
+  .home-info-section .home-description {
+    font-size: 1.5rem;
+    top: 5px;
+  }
+
+  .store-image {
+    max-width: 700px;
+  }
+
+  .explore-btn {
+    padding: 12px 25px;
+    font-size: 1.3rem;
+  }
+
+  .about-us-wrapper h2 {
+    font-size: 30px;
+  }
+
+  .profile-card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 991px) {
+  .profile-card-body h5 {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 767px) {
-  .container {
+  body {
+    .profile-card-body h5 {
+    font-size: 0.8rem;
+  }
     padding: 10px;
   }
 
   .home-info-section {
-    padding: 20px 0;
+    padding: 40px 20px;
   }
 
-  .home-info-section .row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .home-info-section h3 {
+    font-size: 1.8rem;
   }
 
-  .home-name {
-    font-size: 1.3rem;
+  .home-info-section .home-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 
-  .home-description {
+  .store-image {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .explore-btn {
+    padding: 8px 15px;
     font-size: 1rem;
   }
+
+  .about-us-wrapper h2 {
+    font-size: 26px;
+  }
+
+  .about-us-wrapper h2 {
+    margin-bottom: 30px;
+  }
+
+  .profile-card {
+    width: 100%;
+  }
+
+  .profile-card img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
 }
 
-/* Fullscreen Modal */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-}
 
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-}
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-     <!--about us css-->     
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f1f1f1;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px 0;
-        }
-
-        .about-us-wrapper {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            max-width: 1200px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .about-us-wrapper h2 {
-            font-size: 28px;
-            color: #333;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .about-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .about-row {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .profile-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: calc(33.33% - 20px);
-            cursor: pointer;
-            border: 2px solid transparent;
-            margin-bottom: 20px;
-            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
-        }
-
-        .profile-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .profile-card-body {
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-
-        .profile-card-body h5 {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #34495e;
-            margin: 0;
-            transition: color 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-            border-color: #3498db;
-        }
-
-        .profile-card:hover .profile-card-body h5 {
-            color: #3498db;
-        }
-
-        @media (max-width: 768px) {
-            .profile-card {
-                width: calc(50% - 20px);
-            }
-
-            .profile-card-body h5 {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .profile-card {
-                width: 100%;
-            }
-
-            .profile-card-body h5 {
-                font-size: 0.4rem;
-            }
-
-            .child-profile-card .profile-card-body h5 {
-                font-size: 0.4rem;
-            }
-        }
-
-        /* Saree Section Styles */
+/* Saree Section Styles */
 .saree-section {
     padding: 50px 0;
     background-color: #f8f9fa;
@@ -649,51 +741,19 @@ body {
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/logo.png?alt=media&token=6c8a3d1b-c102-49c5-8b7c-b4d54d007388" alt="Brand Logo" class="me-2">
-            <span class="navbar-text">Sri Vijaya Lakshmi Fine Kalamkari Arts</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <!-- Home Link: Scroll to home-info-section -->
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" id="home-btn">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="awards.html">Awards</a>
-              </li>            
-              <li class="nav-item">
-                <a class="nav-link" href="Saree-page.html">Sarees</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="best-works.html">Best Works</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
+    <nav>
+        <div class="logo-container">
+          <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/logo.png?alt=media&token=6c8a3d1b-c102-49c5-8b7c-b4d54d007388" alt="Logo" aria-label="Saree Collection Logo">
+          <span class="company-name">Sri Vijaya Lakshmi Fine Kalamkari Arts</span>
         </div>
+        <ul>
+            <li><a href="#home-info-about-us-section" aria-label="Home">Home</a></li>
+            <li><a href="about.html" aria-label="About Us">About</a></li>
+            <li><a href="saree-page.html" aria-label="Sarees Collection">Sarees</a></li>
+            <li><a href="contact.html" aria-label="Contact Us">Contact</a></li>
+          </ul>          
       </nav>
       
-      <script>
-        
-        document.getElementById("home-btn").addEventListener("click", function(event) {
-          event.preventDefault();
-          document.getElementById("home-info-section").scrollIntoView({ behavior: "smooth" });
-        });
-      </script>
    <div class="content">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
         <div class="carousel-inner">
@@ -767,127 +827,124 @@ body {
       <div class="row">
         <div class="col">
           <h2 class="store-title">Sri Vijayalakshmi Fine Kalamkari Arts</h2>
-          <p class="store-description">Explore a wide range of high-quality Kalamkari sarees and more, handcrafted with love.</p>
-          <!-- Updated Shop Now Button (Redirects to Saree-page.html) -->
-          <a href="Saree-page.html" class="btn btn-primary">Shop Now</a>
+          <p class="store-description">Explore a wide range of high-quality Kalamkari sarees and more, handcrafted with love.</p>                 
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Section 2: Home Information -->
-  <section id="home-info-section" class="home-info-section">
+  <section id="home-info-about-us-section" class="home-info-about-us-section">
     <div class="container">
       <div class="row">
         <div class="col">
-          <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" alt="Home" class="store-image" id="homeImage" onclick="openFullscreen('homeImage')">
-          <h3 class="home-name">M VISWANATH REDDY</h3>
-          <p class="home-award">(National Award Winner)</p>
-          <p class="home-description">Founder and Owner of the store, passionate about traditional arts and crafts, bringing authentic Kalamkari designs to life.</p>
+          <a href="index.html">
+            <img 
+              src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/home.jpg?alt=media&token=dfc222df-6b39-434f-929a-434b2506cd92" 
+              alt="Elegant Kalamkari Saree Collection" 
+              class="store-image" 
+              id="homeImage" 
+              onclick="openFullscreen('homeImage')" 
+              loading="lazy">
+          </a>
+          <h3 class="store-name">M VISWANATH REDDY</h3>
+          <p class="store-award">(National Award Winner in Handloom Craftsmanship)</p>
+          <p class="store-description">
+            Welcome to our exclusive store for traditional <span class="highlight">Kalamkari Sarees</span>. 
+            Discover the timeless art of handwoven elegance and intricate designs that celebrate India’s cultural heritage.
+          </p>         
+          <a href="Saree-page.html" class="btn explore-btn">Explore Collection</a>
+         
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>About Us</h2>
+          <div class="about-container">
+            <div class="about-row">
+              <div class="profile-card">
+                <a href="muni-reddy.html" aria-label="Muni Reddy's profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/munireddy.jpg?alt=media&token=3a4146c3-6c33-472f-98b9-0e7cc091e879" alt="Muni Reddy">
+                  <div class="profile-card-body">
+                    <h5><strong>Muni Reddy</strong></h5>
+                  </div>
+                </a>
+              </div>
+              <div class="profile-card">
+                <a href="rajeshwari.html" aria-label="Rajeshwari's profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari">
+                  <div class="profile-card-body">
+                    <h5><strong>Rajeshwari</strong></h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="about-row">
+              <div class="profile-card child-profile-card">
+                <a href="muniratnamma.html" aria-label="Muniratnamma's profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/muniratnamma.jpg?alt=media&token=33e8fe3e-95fc-4a0c-83ce-bf73e21e1e62" alt="Muniratnamma">
+                  <div class="profile-card-body">
+                    <h5><strong>Muniratnamma</strong></h5>
+                  </div>
+                </a>
+              </div>
+              <div class="profile-card child-profile-card">
+                <a href="vijayalakshmi.html" aria-label="Vijaya Lakshmi's profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/vijayalakshmi.jpg?alt=media&token=6aafca8b-814c-4336-886c-95b3eb851142" alt="Vijaya Lakshmi">
+                  <div class="profile-card-body">
+                    <h5><strong>Vijaya Lakshmi</strong></h5>
+                  </div>
+                </a>
+              </div>
+              <div class="profile-card child-profile-card">
+                <a href="viswanath-reddy.html" aria-label="Viswanath Reddy's profile">
+                  <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/viswanath%20reddy.jpg?alt=media&token=4d926e6f-ec0b-431a-b39e-2ef8b3831558" alt="Viswanath Reddy">
+                  <div class="profile-card-body">
+                    <h5><strong>Viswanath Reddy</strong></h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <script>
-    function openFullscreen(elementId) {
-      var elem = document.getElementById(elementId);
-      var wrapper = document.createElement('div');
-      wrapper.id = "fullscreen-wrapper";
-      wrapper.style.position = 'fixed';
-      wrapper.style.top = '0';
-      wrapper.style.left = '0';
-      wrapper.style.width = '100vw';
-      wrapper.style.height = '100vh';
-      wrapper.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-      wrapper.style.display = 'flex';
-      wrapper.style.justifyContent = 'center';
-      wrapper.style.alignItems = 'center';
-      wrapper.style.zIndex = '1000';
-      wrapper.style.transition = 'all 0.5s ease-in-out';
   
-      var imgClone = elem.cloneNode();
-      imgClone.style.maxWidth = '90%';
-      imgClone.style.maxHeight = '90%';
-      imgClone.style.transition = 'all 0.5s ease-in-out';
+  <script>
+    function exploreCollection() {
+      window.location.href = '/collections';
+    }
+  
+    function openFullscreen(elementId) {
+      const elem = document.getElementById(elementId);
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('modal', 'show');
+      wrapper.id = 'fullscreen-wrapper';
+  
+      const imgClone = elem.cloneNode();
+      imgClone.classList.add('modal-content');
       imgClone.onclick = closeFullscreen;
   
+      const closeButton = document.createElement('span');
+      closeButton.className = 'close';
+      closeButton.innerHTML = '&times;';
+      closeButton.onclick = closeFullscreen;
+  
       wrapper.appendChild(imgClone);
+      wrapper.appendChild(closeButton);
       document.body.appendChild(wrapper);
-      
-      setTimeout(() => {
-        wrapper.style.transform = 'scale(1)';
-      }, 0);
     }
   
     function closeFullscreen() {
-      var wrapper = document.getElementById('fullscreen-wrapper');
+      const wrapper = document.getElementById('fullscreen-wrapper');
       if (wrapper) {
-        wrapper.style.transform = 'scale(0)';
-        setTimeout(() => {
-          document.body.removeChild(wrapper);
-        }, 500);
+        wrapper.classList.remove('show');
+        setTimeout(() => wrapper.remove(), 500);
       }
     }
   </script>
   
-  <style>
-    #fullscreen-wrapper {
-      transform: scale(0);
-    }
-  </style>
-  
-    
-<!-- About Us Section -->
-<section class="about-us-wrapper" id="about">
-    <h2>About US</h2>
-    <div class="about-container">
-        <div class="about-row">
-            <div class="profile-card">
-                <a href="muni-reddy.html">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/munireddy.jpg?alt=media&token=3a4146c3-6c33-472f-98b9-0e7cc091e879" alt="Muni Reddy">
-                    <div class="profile-card-body">
-                        <h5><strong>Muni Reddy</strong></h5>
-                    </div>
-                </a>
-            </div>
-            <div class="profile-card">
-                <a href="rajeshwari.html">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/rajeshwari.jpg?alt=media&token=2130d24e-bfbb-4529-941f-fd978e28641d" alt="Rajeshwari">
-                    <div class="profile-card-body">
-                        <h5><strong>Rajeshwari</strong></h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="about-row">
-            <div class="profile-card child-profile-card">
-                <a href="muniratnamma.html">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/muniratnamma.jpg?alt=media&token=33e8fe3e-95fc-4a0c-83ce-bf73e21e1e62" alt="Muniratnamma">
-                    <div class="profile-card-body">
-                        <h5><strong>Muniratnamma</strong></h5>
-                    </div>
-                </a>
-            </div>
-            <div class="profile-card child-profile-card">
-                <a href="vijayalakshmi.html">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/vijayalakshmi.jpg?alt=media&token=6aafca8b-814c-4336-886c-95b3eb851142" alt="Vijaya Lakshmi">
-                    <div class="profile-card-body">
-                        <h5><strong>Vijaya Lakshmi</strong></h5>
-                    </div>
-                </a>
-            </div>
-            <div class="profile-card child-profile-card">
-                <a href="viswanath-reddy.html">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-92a1d.appspot.com/o/viswanath%20reddy.jpg?alt=media&token=4d926e6f-ec0b-431a-b39e-2ef8b3831558" alt="Viswanath Reddy">
-                    <div class="profile-card-body">
-                        <h5><strong>Viswanath Reddy</strong></h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="saree-section" id="saree-section">
     <div class="container">
